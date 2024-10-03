@@ -38,6 +38,9 @@
         ],
 
     ];
+
+    $parkingService = isset($_GET['parking']);
+    $hotelRating = isset($_GET['ratings']);
 ?>
 
 <!DOCTYPE html>
@@ -50,12 +53,14 @@
     <!-- bootstrap -->
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 </head>
+
 <body>
     <main>
         <div class="container">
-
+            
+        <!-- filters
             <section id="filters">
-                <form>
+                <form action="index.php">
                     <div class="mb-3">
                     <label for="hotelRate">Vote</label>
                     <input type="number" id="hotelRate" name="ratings" min="1" max="5">
@@ -67,8 +72,9 @@
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
-            </section>
+            </section> -->
 
+        <!-- results -->
             <section id="hotels-table">
                 <h1 class="my-4 text-center fw-bold text-dark">Our Hotel</h1>
                 <table class="table text-center">
@@ -81,8 +87,9 @@
                         <th scope="col">Distance to center</th>
                         </tr>
                     </thead>
+                    
                     <tbody>
-                        <?php foreach($hotels as $hotel) { ?>
+                        <?php foreach($hotels as $hotel) {?>
                             <tr>
                                 <td class="table-success text-start"><?= $hotel["name"];?></td>
                                 <td class="table-primary text-start"><?= $hotel["description"];?></td>
