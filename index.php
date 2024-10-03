@@ -56,7 +56,7 @@
 <body>
     <main>
         <div class="container">
-            <h1 class="my-4 text-center fw-bold text-dark">I nostri Hotel</h1>
+            <h1 class="my-4 text-center fw-bold text-dark">Our Hotel</h1>
             <table class="table text-center">
                 <thead>
                     <tr class="table-danger">
@@ -72,7 +72,7 @@
                         <tr>
                             <td class="table-success text-start"><?= $hotel["name"];?></td>
                             <td class="table-primary text-start"><?= $hotel["description"];?></td>
-                            <td class="table-info "><?= $hotel["parking"]; ?></td>
+                            <td class="table-info "><?= $hotel["parking"] ? 'Yes': 'No'; ?></td>
                             <td><?= $hotel["vote"]; ?></td>
                             <td class="table-warning"><?= $hotel["distance_to_center"]; ?></td>
                         </tr>
