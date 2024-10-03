@@ -40,6 +40,7 @@
 
     ];
 
+
 ?>
 
 <!DOCTYPE html>
@@ -55,15 +56,31 @@
 <body>
     <main>
         <div class="container">
-            <?php foreach($hotels as $hotel) { ?>
+            <h1 class="my-4 text-center fw-bold text-dark">I nostri Hotel</h1>
+            <table class="table text-center">
+                <thead>
+                    <tr class="table-danger">
+                    <th scope="col">Hotel</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Parking</th>
+                    <th scope="col">Vote</th>
+                    <th scope="col">Distance to center</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach($hotels as $hotel) { ?>
+                        <tr>
+                            <td class="table-success text-start"><?= $hotel["name"];?></td>
+                            <td class="table-primary text-start"><?= $hotel["description"];?></td>
+                            <td class="table-info "><?= $hotel["parking"]; ?></td>
+                            <td><?= $hotel["vote"]; ?></td>
+                            <td class="table-warning"><?= $hotel["distance_to_center"]; ?></td>
+                        </tr>
+                    <?php } ?>   
+                </tbody>
+            </table>
 
-                <?= $hotel["name"];?>
-                <?= $hotel["description"];?>
-                <?= $hotel["parking"]; ?>
-                <?= $hotel["vote"]; ?>
-                <?= $hotel["distance_to_center"]; ?>
-                
-            <?php } ?>    
+ 
         </div>
     </main>
 </body>
